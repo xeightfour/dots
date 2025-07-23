@@ -1,0 +1,73 @@
+[theme]
+theme = 'native'
+
+[theme.overrides]
+idle_fg = '#f8f8f2'
+info_fg = '#50fa7b'
+good_fg = '#bd93f9'
+warning_fg = '#ffb86c'
+critical_fg = '#ff5555'
+
+[icons]
+icons = 'awesome6'
+
+[icons.overrides]
+memory_mem = ''
+cogs = '⚙'
+
+[[block]]
+block = 'scratchpad'
+[block.theme_overrides]
+idle_fg = '#6272a4'
+
+[[block]]
+block = 'keyboard_layout'
+driver = 'sway'
+[block.mappings]
+'English (US)' = '🇺🇸'
+'Persian (N/A)' = '🇮🇷 '
+
+[[block]]
+block = 'temperature'
+format = ' $icon $max '
+interval = 2
+chip = 'coretemp-*'
+info = 45
+warning = 50
+
+[[block]]
+block = 'net'
+format = ' $icon ^icon_net_down $speed_down.eng(w:4, prefix:K) ^icon_net_up $speed_up.eng(w:4, prefix:K) '
+interval = 2
+
+[[block]]
+block = 'cpu'
+interval = 2
+format = ' $icon $utilization.eng(w:3) '
+
+[[block]]
+block = 'load'
+interval = 2
+
+[[block]]
+block = 'disk_space'
+interval = 30
+info_type = 'available'
+alert_unit = 'GiB'
+format = ' $icon $available.eng(w:1, prefix:G, force_prefix:true) '
+
+[[block]]
+block = 'memory'
+interval = 2
+format = ' $icon $mem_used.eng(w:4, prefix:M, force_prefix:true) ~ $mem_used_percents.eng(w:2) '
+format_alt = ' $icon_swap $swap_used.eng(w:1, prefix:M, force_prefix:true) ~ $swap_used_percents.eng(w:2) '
+
+[[block]]
+block = 'sound'
+driver = 'auto'
+format = ' $icon {$volume.eng(w:3)|} '
+
+[[block]]
+block = 'time'
+interval = 5
+format = " $timestamp.datetime(f:'%x - %T') "
