@@ -40,7 +40,7 @@ set splitbelow
 set splitright
 set cursorlineopt=screenline,number
 set cursorline
-set numberwidth=4
+set numberwidth=3
 set relativenumber
 set number
 set signcolumn=yes
