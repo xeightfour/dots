@@ -1,0 +1,31 @@
+# vim: set ft=cfg:
+# Mako Configuration
+
+# Style options
+font=SF Mono 12
+background-color=#282a36
+text-color=#f8f8f2
+width=360
+margin=6
+outer-margin=6
+border-color=#6272a4
+border-radius=3
+progress-color=#50fa7b
+max-icon-size=32
+icon-path=/home/soheil/.local/share/icons/Flat-Remix-Yellow-Dark
+
+# Behavior
+default-timeout=8000
+group-by=app-name
+
+# Urgency-specific settings
+[urgency=low]
+border-color=#44475a
+default-timeout=4000
+
+[urgency=normal]
+border-color=#6272a4
+
+[urgency=high]
+border-color=#ffb86c
+default-timeout=0
