@@ -1,0 +1,13 @@
+@theme "/usr/share/rofi/themes/arthur.rasi"
+
+element-icon {
+	size: 24px;
+}
+
+window {
+	width: 780px;
+}
+
+* {
+	font: "Caskaydia Cove NF 15";
+}
