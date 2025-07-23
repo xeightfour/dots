@@ -1,0 +1,41 @@
+$include /etc/inputrc
+
+# Completion behavior
+set show-all-if-ambiguous on
+set completion-query-items 150
+set mark-symlinked-directories on
+set completion-ignore-case on
+set match-hidden-files off
+set skip-completed-text on
+
+# Visual enhancements
+set visible-stats on
+set colored-stats on
+set colored-completion-prefix on
+
+# Paging
+set page-completions off
+
+# Menu completion (cycle through completions with Tab)
+set menu-complete-display-prefix on
+
+# Bell settings (disable annoying sounds)
+set bell-style none
+
+# Better word boundaries for Alt+Backspace and Ctrl+W
+set bind-tty-special-chars off
+
+# History navigation with prefix matching
+"\e[A": history-search-backward
+"\e[B": history-search-forward
+
+# Alt+Backspace to delete word backwards
+"\e\C-h": backward-kill-word
+"\e\C-?": backward-kill-word
+
+# Ctrl+Backspace to delete word backwards (in some terminals)
+"\C-h": backward-delete-char
+
+# Tab completion improvements
+"\t": menu-complete
+"\e[Z": menu-complete-backward
