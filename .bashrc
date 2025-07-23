@@ -111,10 +111,12 @@ win() {
 	export QT_QPA_PLATFORMTHEME='gtk3'
 	
 	export _JAVA_AWT_WM_NONREPARENTING=1
+
+	export NO_AT_BRIDGE=11
 	
 	echo 'Launching Wayland session...'
 	cd ~ || return 1
-	exec dbus-run-session -- sh -c 'dbus-update-activation-environment --all && pipewire & exec sway'
+	exec dbus-run-session -- sh -c 'pipewire & exec sway'
 }
 
 hibernate() {
