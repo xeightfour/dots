@@ -13,7 +13,6 @@ icons = 'awesome6'
 
 [icons.overrides]
 memory_mem = ''
-cogs = '⚙'
 
 [[block]]
 block = 'scratchpad'
@@ -25,7 +24,7 @@ block = 'keyboard_layout'
 driver = 'sway'
 [block.mappings]
 'English (US)' = '🇺🇸'
-'Persian (N/A)' = '🇮🇷 '
+'Persian (N/A)' = '🇮🇷'
 
 [[block]]
 block = 'temperature'
@@ -48,6 +47,7 @@ format = ' $icon $utilization.eng(w:3) '
 [[block]]
 block = 'load'
 interval = 2
+format = ' $icon  $1m.eng(w:4) ' # Double padding:/
 
 [[block]]
 block = 'disk_space'
