@@ -23,7 +23,7 @@ set $menu rofi -show drun -show-icons
 ###########################
 
 # Initialize D-Bus environment for GUI services
-exec 'dbus-update-activation-environment WAYLAND_DISPLAY DISPLAY'
+exec dbus-update-activation-environment WAYLAND_DISPLAY DISPLAY
 
 # User applications and services
 exec /usr/libexec/polkit-gnome-authentication-agent-1
@@ -56,7 +56,7 @@ input type:keyboard {
 #########################
 
 # Typography configuration
-font pango: JetBrains Mono Italic 10
+font pango: Intel One Mono 10
 
 # Mouse interaction behavior
 focus_follows_mouse no
@@ -87,7 +87,7 @@ seat seat0 xcursor_theme Banana 32
 
 bar {
 	status_command i3status-rs
-	font pango: CaskaydiaCove Nerd Font 12
+	font pango: Caskaydia Cove NF 12
 	position top
 	workspace_min_width 30
 	height 30
