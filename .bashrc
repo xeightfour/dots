@@ -100,8 +100,7 @@ win() {
 	fi
 	
 	# Set Wayland session environment variables
-	export XDG_CURRENT_DESKTOP='sway'
-	export XDG_SESSION_DESKTOP='sway'
+	export XDG_SESSION_DESKTOP='hyprland'
 	export XDG_SESSION_TYPE='wayland'
 	export CLUTTER_BACKEND='wayland'
 	export SDL_VIDEODRIVER='wayland'
@@ -116,7 +115,7 @@ win() {
 	
 	echo 'Launching Wayland session...'
 	cd ~ || return 1
-	exec dbus-run-session -- sh -c 'pipewire & exec sway'
+	exec dbus-run-session -- sh -c 'pipewire & exec hyprland'
 }
 
 hibernate() {
