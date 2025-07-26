@@ -17,7 +17,8 @@
 		"disk",
 		"memory",
 		"pulseaudio",
-		"clock"
+		"clock",
+		"tray"
 	],
 
 	"hyprland/workspaces": {
@@ -87,5 +88,10 @@
 		"format": "{:%x %X}",
 		"interval": 5,
 		"tooltip-format": "{:%A, %B %e, %Y}"
+	},
+
+	"tray": {
+		"icon_size": 16,
+		"spacing": 10
 	}
 }
