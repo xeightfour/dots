@@ -1,0 +1,128 @@
+* {
+	border: none;
+	border-radius: 0;
+	font-family: "Caskaydia Cove NF", "Font Awesome 6";
+	font-weight: Bold;
+	font-size: 16px;
+	min-height: 0;
+}
+
+window#waybar {
+	background-color: #282a36;
+	color: #f8f8f2;
+}
+
+.modules-left,
+.modules-center,
+.modules-right {
+	background-color: transparent;
+}
+
+tooltip {
+	background: #282a36;
+	border: 1px solid #6272a4;
+	border-radius: 7px;
+	color: #f8f8f2;
+}
+
+#workspaces {
+	padding: 0;
+}
+
+#workspaces button {
+	background-color: #282a36;
+	color: #f8f8f2;
+	border: none;
+	border-radius: 0;
+	padding: 0 7px;
+}
+
+#workspaces button.active {
+	background-color: #bd93f9;
+	color: #282a36;
+}
+
+#workspaces button.urgent {
+	background-color: #ff5555;
+	color: #282a36;
+}
+
+#network {
+	border-right: 1px dotted #44475a;
+	background-color: #282a36;
+	color: #f8f8f2;
+	padding: 0 10px;
+}
+
+#temperature {
+	border-right: 1px dotted #44475a;
+	background-color: #282a36;
+	color: #f8f8f2;
+	padding: 0 10px;
+}
+
+#temperature.warning {
+	background-color: #282a36;
+	color: #f8f8f2;
+}
+
+#temperature.critical {
+	background-color: #282a36;
+	color: #f8f8f2;
+}
+
+#cpu {
+	border-right: 1px dotted #44475a;
+	background-color: #282a36;
+	color: #f8f8f2;
+	padding: 0 10px;
+}
+
+#load {
+	border-right: 1px dotted #44475a;
+	background-color: #282a36;
+	color: #f8f8f2;
+	padding: 0 10px;
+}
+
+#disk {
+	border-right: 1px dotted #44475a;
+	background-color: #282a36;
+	color: #f8f8f2;
+	padding: 0 10px;
+}
+
+#disk.warning {
+	background-color: #282a36;
+	color: #f8f8f2;
+}
+
+#disk.critical {
+	background-color: #282a36;
+	color: #f8f8f2;
+}
+
+#memory {
+	border-right: 1px dotted #44475a;
+	background-color: #282a36;
+	color: #f8f8f2;
+	padding: 0 10px;
+}
+
+#pulseaudio {
+	border-right: 1px dotted #44475a;
+	background-color: #282a36;
+	color: #f8f8f2;
+	padding: 0 10px;
+}
+
+#pulseaudio.muted {
+	background-color: #282a36;
+	color: #f8f8f2;
+}
+
+#clock {
+	background-color: #282a36;
+	color: #f8f8f2;
+	padding: 0 10px;
+}
