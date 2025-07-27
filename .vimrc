@@ -1,4 +1,7 @@
-" Vim-Plug Setup
+" ==============
+" VIM-PLUG SETUP
+" ==============
+
 let dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
 if empty(glob(dir . '/autoload/plug.vim'))
 	silent execute '!curl -fLo ' . dir . '/autoload/plug.vim --create-dirs ' .
@@ -7,14 +10,20 @@ if empty(glob(dir . '/autoload/plug.vim'))
 	autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
-" Plugins
+" =======
+" PLUGINS
+" =======
+
 call plug#begin()
 Plug 'bfrg/vim-c-cpp-modern'
 Plug 'jasonccox/vim-wayland-clipboard'
 Plug 'airblade/vim-gitgutter'
 call plug#end()
 
-" Basic Settings
+" ==============
+" BASIC SETTINGS
+" ==============
+
 filetype plugin indent on
 syntax on
 set termguicolors
@@ -26,9 +35,11 @@ set hidden
 set noswapfile
 set nobackup
 set undofile
-set undodir=~/.vim/undodir
 
-" Display Settings
+" ================
+" DISPLAY SETTINGS
+" ================
+
 set showcmd
 set showmatch
 set matchtime=2
@@ -49,7 +60,10 @@ set wildmenu
 set wildmode=longest:full,full
 set completeopt=menuone,noinsert,noselect
 
-" Indentation Settings
+" ====================
+" INDENTATION SETTINGS
+" ====================
+
 set smartindent
 set autoindent
 set tabstop=4
@@ -59,14 +73,20 @@ set cinoptions=g0,(s,us,U1,ks,m1
 set noexpandtab
 set shiftround
 
-" Search Settings
+" ===============
+" SEARCH SETTINGS
+" ===============
+
 set incsearch
 set hlsearch
 set ignorecase
 set smartcase
 set gdefault
 
-" Visual Settings
+" ===============
+" VISUAL SETTINGS
+" ===============
+
 set listchars=tab:│\ \ ,trail:·
 set list
 set wrap
@@ -74,20 +94,34 @@ set linebreak
 set breakindent
 set showbreak=↯\ 
 
-" Performance Settings
+" ====================
+" PERFORMANCE SETTINGS
+" ====================
+
 set updatetime=250
 set timeoutlen=500
 set ttimeoutlen=50
 set lazyredraw
 
-" Automatically sync unnamed register with system clipboard
-set clipboard=unnamed,unnamedplus
+" ============================
+" BACKUP, TEMP & UNDO SETTINGS
+" ============================
 
-" Backup and Temp Settings
-set backupdir=/tmp
-set directory=/tmp
+" Create robust, private directories for temp and undo files
+let s:vimdir = has('nvim') ? stdpath('data') : expand('~/.vim')
+let &undodir = s:vimdir . '/undodir'
+let &directory = s:vimdir . '/tmp'
+let &backupdir = s:vimdir . '/backup'
 
-" Custom Mappings
+" Create the directories if they don't exist
+if !isdirectory(&undodir) | call mkdir(&undodir, "p") | endif
+if !isdirectory(&directory) | call mkdir(&directory, "p") | endif
+if !isdirectory(&backupdir) | call mkdir(&backupdir, "p") | endif
+
+" ===============
+" CUSTOM MAPPINGS
+" ===============
+
 let mapleader = "\<space>"
 
 " Config Management
@@ -139,7 +173,10 @@ vnoremap > >gv
 nnoremap <leader>a ggVG
 nnoremap <leader>d :t.<cr>
 
-" Auto Commands
+" =============
+" AUTO COMMANDS
+" =============
+
 if has("autocmd")
 	augroup autovimrc
 		autocmd!
@@ -148,7 +185,10 @@ if has("autocmd")
 	augroup END
 endif
 
-" Plugin Configurations
+" =====================
+" PLUGIN CONFIGURATIONS
+" =====================
+
 " GitGutter
 let g:gitgutter_sign_added = '+'
 let g:gitgutter_sign_modified = '~'
